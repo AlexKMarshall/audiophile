@@ -42,7 +42,6 @@ jobs:
         id: playwright-version
         run: |
           echo "PLAYWRIGHT_VERSION=$(node -e "process.stdout.write(require('@playwright/test/package.json').version)")" >> $GITHUB_OUTPUT
-
       - uses: actions/cache@v3
         name: Setup Playwright browser cache
         id: playwright-cache
@@ -52,6 +51,10 @@ jobs:
 
       - name: Install Playwright Browsers
         run: pnpm exec playwright install --with-deps
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+
+      - name: Install Playwright deps
+        run: npx playwright install-deps
         if: steps.playwright-cache.outputs.cache-hit != 'true'
 
       - uses: actions/cache@v3
