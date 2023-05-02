@@ -1,17 +1,33 @@
 import Image from 'next/image'
 import { type ReactNode } from 'react'
 import bestGearMobile from './image-best-gear-mobile.jpg'
+import bestGearTablet from './image-best-gear-tablet.jpg'
+import bestGearDesktop from './image-best-gear-desktop.jpg'
 
 export default function CatalogLayout({ children }: { children: ReactNode }) {
   return (
     <div>
       {children}
-      <div className="mb-32 flex flex-col gap-10">
-        <div className="overflow-hidden rounded-lg">
-          <Image src={bestGearMobile} alt="" />
+      <div className="mb-32 flex flex-col items-center gap-10 sm:gap-16 lg:flex-row-reverse lg:gap-32">
+        <div className="overflow-hidden rounded-lg lg:basis-1/2">
+          <Image
+            src={bestGearDesktop}
+            alt="man listening with over-ear headphones against a patterned wall"
+            className="hidden lg:block"
+          />
+          <Image
+            src={bestGearTablet}
+            alt="man listening with over-ear headphones against a patterned wall"
+            className="hidden sm:block lg:hidden"
+          />
+          <Image
+            src={bestGearMobile}
+            alt="man listening with over-ear headphones against a patterned wall"
+            className="sm:hidden"
+          />
         </div>
-        <div className="text-center">
-          <h2 className="mb-8 text-3xl font-bold uppercase leading-none tracking-wide">
+        <div className="max-w-xl text-center lg:basis-1/2 lg:text-left">
+          <h2 className="mb-8 text-3xl font-bold uppercase leading-none tracking-wide sm:text-5xl">
             Bringing you the <span className="text-orange-500">best</span> audio
             gear
           </h2>
