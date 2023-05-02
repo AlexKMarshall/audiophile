@@ -4,8 +4,10 @@ export default function CategoryPage({
   params: { categoryName: string }
 }) {
   return (
-    <div>
-      <h1>{params.categoryName}</h1>
+    <div className="bg-black py-8 text-white">
+      <h1 className="text-center text-3xl font-bold uppercase tracking-widest">
+        {params.categoryName}
+      </h1>
     </div>
   )
 }
