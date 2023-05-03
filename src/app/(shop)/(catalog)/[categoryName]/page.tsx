@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { CenterContent } from '~/components/CenterContent'
+import { createClient } from '@sanity/client'
+
 import xx99MarkTwoPreviewMobile from './xx99-mk2-image-category-page-preview-mobile.jpg'
 import xx99MarkTwoPreviewTablet from './xx99-mk2-image-category-page-preview-tablet.jpg'
 import xx99MarkTwoPreviewDesktop from './xx99-mk2-image-category-page-preview-desktop.jpg'
@@ -67,4 +69,19 @@ export default function CategoryPage({
       </CenterContent>
     </div>
   )
+}
+
+const sanityClient = createClient({
+  projectId: 'yqp9gomt',
+  dataset: 'production',
+  apiVersion: '2023-05-03',
+  useCdn: false,
+})
+
+export async function generateStaticParams() {
+  const slugs: string[] = await sanityClient.fetch(
+    `*[_type == "productCategory"][].slug.current`
+  )
+
+  return slugs.map((slug) => ({ categoryName: slug }))
 }
