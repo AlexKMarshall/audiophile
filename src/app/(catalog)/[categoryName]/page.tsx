@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { CenterContent } from '~/components/CenterContent'
 import xx99MarkTwoPreviewMobile from './xx99-mk2-image-category-page-preview-mobile.jpg'
 import xx99MarkTwoPreviewTablet from './xx99-mk2-image-category-page-preview-tablet.jpg'
+import xx99MarkTwoPreviewDesktop from './xx99-mk2-image-category-page-preview-desktop.jpg'
 
 export default function CategoryPage({
   params,
@@ -18,8 +19,13 @@ export default function CategoryPage({
       </div>
       <CenterContent>
         <div className="flex flex-col gap-32 py-16 sm:py-32">
-          <div className="flex flex-col items-center">
-            <div className="mb-8 overflow-hidden rounded-lg sm:mb-14">
+          <div className="flex flex-col items-center gap-8 sm:gap-14 lg:flex-row lg:gap-32">
+            <div className="overflow-hidden rounded-lg">
+              <Image
+                src={xx99MarkTwoPreviewDesktop}
+                alt="Black over ear headphones with gloss finish"
+                className="hidden lg:block"
+              />
               <Image
                 src={xx99MarkTwoPreviewTablet}
                 alt="Black over ear headphones with gloss finish"
@@ -31,7 +37,7 @@ export default function CategoryPage({
                 className="sm:hidden"
               />
             </div>
-            <div className="flex max-w-xl flex-col items-center gap-6 text-center sm:gap-0">
+            <div className="flex max-w-xl flex-col items-center gap-6 text-center sm:gap-0 lg:items-start lg:text-left">
               <p className="text-sm uppercase tracking-[0.7em] text-orange-500 sm:mb-4">
                 New product
               </p>
@@ -41,7 +47,7 @@ export default function CategoryPage({
               >
                 XX99 Mark II Headphones
               </h2>
-              <p className="font-medium leading-relaxed text-black/50 sm:mb-6">
+              <p className="font-medium leading-relaxed text-black/50 sm:mb-6 lg:mb-10">
                 The new XX99 Mark II headphones is the pinnacle of pristine
                 audio. It redefines your premium headphone experience by
                 reproducing the balanced depth and precision of studio-quality
