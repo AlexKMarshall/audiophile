@@ -1,12 +1,16 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@sanity/client':
     specifier: ^6.0.1
     version: 6.0.1
   '@t3-oss/env-nextjs':
-    specifier: ^0.2.1
-    version: 0.2.1(zod@3.21.4)
+    specifier: ^0.11.0
+    version: 0.11.0(typescript@5.0.2)(zod@3.21.4)
   clsx:
     specifier: ^1.2.1
     version: 1.2.1
@@ -393,6 +397,7 @@ packages:
 
   /@emotion/memoize@0.7.4:
     resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
+    requiresBuild: true
     dev: false
     optional: true
 
@@ -1416,20 +1421,30 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /@t3-oss/env-core@0.2.1(zod@3.21.4):
-    resolution: {integrity: sha512-aTf/E+t0i7WsHJelg8LaynUVgIXeQdDViIr3LCL8XiE+qzE8vWoTgfc+VML/lBBgE2cbcG2VCBnk45EUCjIRdQ==}
+  /@t3-oss/env-core@0.11.0(typescript@5.0.2)(zod@3.21.4):
+    resolution: {integrity: sha512-PSalC5bG0a7XbyoLydiQdAnx3gICX6IQNctvh+TyLrdFxsxgocdj9Ui7sd061UlBzi+z4aIGjnem1kZx9QtUgQ==}
     peerDependencies:
+      typescript: '>=5.0.0'
       zod: ^3.0.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
     dependencies:
+      typescript: 5.0.2
       zod: 3.21.4
     dev: false
 
-  /@t3-oss/env-nextjs@0.2.1(zod@3.21.4):
-    resolution: {integrity: sha512-fWyoUHrwMz+CuO6lJ7jaWNj76LHminYzA0quYp1wv+8EKjHOuP/zf2k0FDtjnHBs//6K+kpWxttVW2Uby3SuQA==}
+  /@t3-oss/env-nextjs@0.11.0(typescript@5.0.2)(zod@3.21.4):
+    resolution: {integrity: sha512-gcRrY2CzSMSrxDf5+fKCUfzbBK125IxOcJHcoMVdjcTmYxEgIZFZ5qPPtngOY3UmTeXSqRZOGuNiosqWTFTkMw==}
     peerDependencies:
+      typescript: '>=5.0.0'
       zod: ^3.0.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
     dependencies:
-      '@t3-oss/env-core': 0.2.1(zod@3.21.4)
+      '@t3-oss/env-core': 0.11.0(typescript@5.0.2)(zod@3.21.4)
+      typescript: 5.0.2
       zod: 3.21.4
     dev: false
 
@@ -1776,6 +1791,7 @@ packages:
 
   /abab@2.0.6:
     resolution: {integrity: sha512-j2afSsaIENvHZN2B8GOpF566vZ5WVk5opAiMTvWgaQT8DkbOqsTfvNAvHoRGU2zzP8cPoqys+xHTRDWW8L+/BA==}
+    deprecated: Use your platform's native atob() and btoa() methods instead
     dev: false
 
   /acorn-globals@7.0.1:
@@ -2572,6 +2588,7 @@ packages:
   /domexception@4.0.0:
     resolution: {integrity: sha512-A2is4PLG+eeSfoTMA95/s4pvAoSo2mKtiM5jlHkAVewmiO8ISFTFKZjH7UAM1Atli/OT/7JHOrJRJiMKUZKYBw==}
     engines: {node: '>=12'}
+    deprecated: Use your platform's native DOMException instead
     dependencies:
       webidl-conversions: 7.0.0
     dev: false
@@ -3457,6 +3474,7 @@ packages:
   /glob@8.0.3:
     resolution: {integrity: sha512-ull455NHSHI/Y1FqGaaYFaLGkNMMJbavMrEGFXG/PGrg6y7sutWHUHrz6gy6WEBH6akM1M414dWKCNs+IhKdiQ==}
     engines: {node: '>=12'}
+    deprecated: Glob versions prior to v9 are no longer supported
     dependencies:
       fs.realpath: 1.0.0
       inflight: 1.0.6
@@ -6128,7 +6146,6 @@ packages:
     resolution: {integrity: sha512-wVORMBGO/FAs/++blGNeAVdbNKtIh1rbBL2EyQ1+J9lClJ93KiiKe8PmFIVdXhHcyv44SL9oglmfeSsndo0jRw==}
     engines: {node: '>=12.20'}
     hasBin: true
-    dev: true
 
   /unbox-primitive@1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}
