@@ -1,12 +1,16 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@sanity/client':
     specifier: ^6.0.1
     version: 6.0.1
   '@t3-oss/env-nextjs':
-    specifier: ^0.2.1
-    version: 0.2.1(zod@3.21.4)
+    specifier: ^0.13.0
+    version: 0.13.11(typescript@5.0.2)(zod@3.21.4)
   clsx:
     specifier: ^1.2.1
     version: 1.2.1
@@ -393,6 +397,7 @@ packages:
 
   /@emotion/memoize@0.7.4:
     resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
+    requiresBuild: true
     dev: false
     optional: true
 
@@ -1106,6 +1111,7 @@ packages:
 
   /@sanity/block-tools@3.9.1:
     resolution: {integrity: sha512-rcjjAWZuYREvK4MqJCuzEf240gSSnogXnhYXvInYime/Bso04rBfAPhX8oS50GMEeX5DfYwYD6Qfr5cdZzyGZQ==}
+    deprecated: Renamed - use `@portabletext/block-tools` instead. `@sanity/block-tools` will no longer receive updates.
     dependencies:
       get-random-values-esm: 1.0.0
       lodash: 4.17.21
@@ -1416,20 +1422,46 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /@t3-oss/env-core@0.2.1(zod@3.21.4):
-    resolution: {integrity: sha512-aTf/E+t0i7WsHJelg8LaynUVgIXeQdDViIr3LCL8XiE+qzE8vWoTgfc+VML/lBBgE2cbcG2VCBnk45EUCjIRdQ==}
+  /@t3-oss/env-core@0.13.11(typescript@5.0.2)(zod@3.21.4):
+    resolution: {integrity: sha512-sM7GYY+KL7H/Hl0BE0inWfk3nRHZOLhmVn7sHGxaZt9FAR6KqREXAE+6TqKfiavfXmpRxO/OZ2QgKRd+oiBYRQ==}
     peerDependencies:
-      zod: ^3.0.0
+      arktype: ^2.1.0
+      typescript: '>=5.0.0'
+      valibot: ^1.0.0-beta.7 || ^1.0.0
+      zod: ^3.24.0 || ^4.0.0
+    peerDependenciesMeta:
+      arktype:
+        optional: true
+      typescript:
+        optional: true
+      valibot:
+        optional: true
+      zod:
+        optional: true
     dependencies:
+      typescript: 5.0.2
       zod: 3.21.4
     dev: false
 
-  /@t3-oss/env-nextjs@0.2.1(zod@3.21.4):
-    resolution: {integrity: sha512-fWyoUHrwMz+CuO6lJ7jaWNj76LHminYzA0quYp1wv+8EKjHOuP/zf2k0FDtjnHBs//6K+kpWxttVW2Uby3SuQA==}
+  /@t3-oss/env-nextjs@0.13.11(typescript@5.0.2)(zod@3.21.4):
+    resolution: {integrity: sha512-NC+3j7YWgpzdFu1t5y/8wqibTK0lm5RS4bjXA1n8uwik3wIR4iZM4Fa+U2BaMa5k3Qk8RZiYhoAIX0WogmGkzg==}
     peerDependencies:
-      zod: ^3.0.0
+      arktype: ^2.1.0
+      typescript: '>=5.0.0'
+      valibot: ^1.0.0-beta.7 || ^1.0.0
+      zod: ^3.24.0 || ^4.0.0
+    peerDependenciesMeta:
+      arktype:
+        optional: true
+      typescript:
+        optional: true
+      valibot:
+        optional: true
+      zod:
+        optional: true
     dependencies:
-      '@t3-oss/env-core': 0.2.1(zod@3.21.4)
+      '@t3-oss/env-core': 0.13.11(typescript@5.0.2)(zod@3.21.4)
+      typescript: 5.0.2
       zod: 3.21.4
     dev: false
 
@@ -1776,6 +1808,7 @@ packages:
 
   /abab@2.0.6:
     resolution: {integrity: sha512-j2afSsaIENvHZN2B8GOpF566vZ5WVk5opAiMTvWgaQT8DkbOqsTfvNAvHoRGU2zzP8cPoqys+xHTRDWW8L+/BA==}
+    deprecated: Use your platform's native atob() and btoa() methods instead
     dev: false
 
   /acorn-globals@7.0.1:
@@ -2572,6 +2605,7 @@ packages:
   /domexception@4.0.0:
     resolution: {integrity: sha512-A2is4PLG+eeSfoTMA95/s4pvAoSo2mKtiM5jlHkAVewmiO8ISFTFKZjH7UAM1Atli/OT/7JHOrJRJiMKUZKYBw==}
     engines: {node: '>=12'}
+    deprecated: Use your platform's native DOMException instead
     dependencies:
       webidl-conversions: 7.0.0
     dev: false
@@ -3362,6 +3396,7 @@ packages:
 
   /get-random-values-esm@1.0.0:
     resolution: {integrity: sha512-BVgZ1PZwR5NKDpHpUcPmWcAQpoIOPXaFy6Vni3UdPbOlxO7eknhxsfytxwss16f75EABfnAC+XZjzTurNlPY/g==}
+    deprecated: use crypto.getRandomValues() instead
     dependencies:
       get-random-values: 1.2.2
     dev: false
@@ -3457,6 +3492,7 @@ packages:
   /glob@8.0.3:
     resolution: {integrity: sha512-ull455NHSHI/Y1FqGaaYFaLGkNMMJbavMrEGFXG/PGrg6y7sutWHUHrz6gy6WEBH6akM1M414dWKCNs+IhKdiQ==}
     engines: {node: '>=12'}
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
     dependencies:
       fs.realpath: 1.0.0
       inflight: 1.0.6
@@ -6128,7 +6164,6 @@ packages:
     resolution: {integrity: sha512-wVORMBGO/FAs/++blGNeAVdbNKtIh1rbBL2EyQ1+J9lClJ93KiiKe8PmFIVdXhHcyv44SL9oglmfeSsndo0jRw==}
     engines: {node: '>=12.20'}
     hasBin: true
-    dev: true
 
   /unbox-primitive@1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}
@@ -6250,6 +6285,7 @@ packages:
 
   /uuid@8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+    deprecated: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
     hasBin: true
     dev: false
 
@@ -6308,6 +6344,7 @@ packages:
   /whatwg-encoding@2.0.0:
     resolution: {integrity: sha512-p41ogyeMUrw3jWclHWTQg1k05DSVXPLcVxRTYsXUk+ZooOCZLcoYgPZ/HL/D/N+uQPOtcp1me1WhBEaX02mhWg==}
     engines: {node: '>=12'}
+    deprecated: Use @exodus/bytes instead for a more spec-conformant and faster implementation
     dependencies:
       iconv-lite: 0.6.3
     dev: false
